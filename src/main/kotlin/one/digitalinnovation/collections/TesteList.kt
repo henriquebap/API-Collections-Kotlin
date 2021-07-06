@@ -1,9 +1,9 @@
 package one.digitalinnovation.collections
 
 fun main(){
-    val henrique = Funcionario("Henrique", 2800.0)
-    val maristela = Funcionario("Maristela", 1000.0)
-    val wilson = Funcionario("Wilson", 12000.0)
+    val henrique = Funcionario("Henrique", 2800.0, tipoDeContratacao = "Junior")
+    val maristela = Funcionario("Maristela", 1000.0, "Estagio")
+    val wilson = Funcionario("Wilson", 12000.0, "CEO")
 
     val funcionarios = listOf(henrique,maristela,wilson)
 
@@ -20,13 +20,14 @@ fun main(){
 
 data class Funcionario(
     val nome: String,
-    val salario: Double
+    val salario: Double,
+    val tipoDeContratacao: String
 ){
     override fun toString(): String =
         """
-            Nome : $nome
+            Nome :   $nome
             Salario: $salario
-            
+            Tipo De Contratacao : $tipoDeContratacao
         """.trimIndent()
 
 }
